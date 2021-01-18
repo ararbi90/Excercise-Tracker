@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import url from '../url'
 
 const Exercise = props => (
     <tr>
@@ -22,7 +23,7 @@ export default class ExercisesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/exercises/')
+        axios.get(url + '/exercises/')
             .then(response => {
                 this.setState({ exercises: response.data });
             })
